@@ -1,0 +1,10 @@
+function checkEven(n){
+if(n%2!=0){
+console.log("Even")
+}
+else{
+console.log("Odd")
+}
+}
+let n=5;
+console.log(n);
