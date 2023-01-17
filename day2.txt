@@ -6,6 +6,19 @@ else{
 console.log("Odd")
 }
 }
+
 let n=5;
 for(let i=0;i<5;i++){
-console.log(checkEven(i))}
+checkEven(i);
+checkOdd(i);
+}
+
+
+function checkOdd(n){
+if(n%2==1){
+console.log("odd")
+}
+else{
+console.log("Even")
+}
+}
