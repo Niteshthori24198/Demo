@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Page</title>
+    <link rel="stylesheet" href="/dashboard.css">
+</head>
+<body>
+    
+    <div class="nav">
+
+        <div>
+            <a href="/index.html"><img src="/images/logo.png" alt="error" ></a>
+        </div>
+
+        <div>
+            <a href="#">Dashboard</a>
+            <a href="/vaccinated.html">Vaccinated</a>
+            <a href="/register.html">Register</a>
+        </div>
+       
+    </div>
+
+
+    <div class="filtersection">
+
+        <select name="filter-vaccine" id="vaccinefilter">
+
+            <option value="">Select</option>
+            <option value="Covishield">Covishield</option>
+            <option value="Covaxin">Covaxin</option>
+            <option value="Sputnik">Sputnik</option>
+
+        </select>
+
+        <select name="sort" id="sortdata">
+
+            <option value="">Select</option>
+            <option value="High to Low">High to Low</option>
+            <option value="Low to High">Low to High</option>
+
+        </select>
+
+        <select name="filter-priority" id="priorityfilter">
+    
+            <option value="">Select</option>
+            <option value="P0">P0</option>
+            <option value="P1">P1</option>
+            <option value="P2">P2</option>
+            <option value="P3">P3</option>
+    
+        </select>
+
+    </div>
+    
+    <div class="tabledata">
+    
+        <table>
+    
+            <thead>
+                <th>UID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Designation</th>
+                <th>Priority</th>
+                <th>Vaccine</th>
+                <th>Remove</th>
+                <th>Vaccinate</th>
+            </thead>
+    
+            <tbody>
+    
+                <!-- append row here -->
+    
+    
+            </tbody>
+    
+        </table>
+    
+     </div>
+
+
+</body>
+</html>
+
+<script src="/dashboard.js"></script>

@@ -1,0 +1,130 @@
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+    align-items: center;
+    margin: auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 50px;
+    /* border: 2px solid red; */
+    width: 100%;
+}
+
+.nav > div:nth-child(1) img{
+    width: 10%;
+    border-radius: 50%;
+}
+.nav > div:nth-child(1){
+    width: 30%;
+    text-align: center;
+    padding: 5px 0px;
+    margin: auto auto auto -100px;
+}
+
+.nav > div:nth-child(2){
+    width: 65%;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav a{
+    text-decoration: none;
+    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.nav a:hover{
+    text-decoration: underline;
+    color: red;
+}
+
+.nav img:hover{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+
+
+
+.tabledata{
+
+    /* border: 2px solid darkblue; */
+    width: 70%;
+    margin: 35px auto;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+
+}
+
+table{
+  
+    margin: auto;
+    width: 100%;
+
+}
+
+.vaccination{
+    background-color: green;
+    cursor: pointer;
+  
+}
+
+.remove{
+    background-color: red;
+    cursor: pointer;
+    
+}
+
+
+.filtersection{
+    display: flex;
+    width: 350px;
+    margin: auto auto auto 5px;
+    padding: 5px;
+}
+
+#vaccinefilter{
+    border-color: aqua;
+    height: 25px;
+    width: 100px;
+    margin-top: 15px;
+}
+
+#priorityfilter{
+    border-color: aqua;
+    height: 25px;
+    width: 100px;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+#sortdata{
+    border-color: aqua;
+    height: 25px;
+    width: 100px;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+
+
+@media all and (max-width:750px){
+
+    .nav{
+       
+        flex-direction: column;
+        height: 80px;
+    }
+    .nav > div:nth-child(2){
+        flex-direction: column;
+    }
+    .nav > div:nth-child(1){
+        display: none;
+    }
+}

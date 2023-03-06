@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="/register.css">
+</head>
+<body>
+    
+    <div class="nav">
+
+        <div>
+            <a href="/index.html"><img src="/images/logo.png" alt="error" ></a>
+        </div>
+
+        <div>
+            <a href="/dashboard.html">Dashboard</a>
+            <a href="/vaccinated.html">Vaccinated</a>
+            <a href="#">Register</a>
+        </div>
+       
+    </div>
+
+    <h2>Register yourself for Vaccination</h2>
+
+    <div class="registerform">
+
+        <form id="user">
+
+            <input type="text" placeholder="Enter your Email-id" id="userid">
+            <input type="text" placeholder="Enter your Name" id="username">
+            <input type="number" placeholder="Enter your age" id="userage">
+            <div>
+                Employee :<input type="radio" name="category" value="Employee">
+                Student :<input type="radio" name="category" value="Student">
+            </div>
+           
+            <select name="priority" id="priority-sel">
+    
+                <option value="">Select</option>
+                <option value="P0">P0</option>
+                <option value="P1">P1</option>
+                <option value="P2">P2</option>
+                <option value="P3">P3</option>
+    
+            </select>
+            <select name="vaccine" id="vaccine-sel">
+    
+                <option value="">Select</option>
+                <option value="Covishield">Covishield</option>
+                <option value="Covaxin">Covaxin</option>
+                <option value="Sputnik">Sputnik</option>
+    
+            </select>
+    
+            <input type="submit" value="Register">
+            
+    
+    
+        </form>
+
+    </div>
+
+
+</body>
+</html>
+
+<script src="/register.js"></script>

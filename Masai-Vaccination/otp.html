@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP BOX</title>
+    <style>
+
+        .cont{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 200px auto;
+            width: 30%;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+        }
+
+        input{
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            border-color: aqua;
+        }
+        button{
+            border-radius: 5px;
+            border-color: aquamarine;
+            color: white;
+            background-color: red;
+            font-size: 15px;
+            padding: 5px;
+            margin: 20px auto;
+        }
+        .otpbox{
+            display: flex;
+            justify-content: space-between;
+           
+            width: 65%;
+        }
+        h1{
+            text-align: center;
+            color: aqua;
+        }
+
+    </style>
+    
+</head>
+<body>
+    
+    <div class="cont">
+        <h1>Enter your OTP</h1>
+        <div class="otpbox" >
+            <input type="text" id="input-feild1" maxlength="1" >
+            <input type="text" id="input-feild2" maxlength="1" >
+            <input type="text" id="input-feild3" maxlength="1" >
+            <input type="text" id="input-feild4" maxlength="1" >
+        </div>
+        <button id="verifyotp">Verify OTP</button>
+    </div>
+
+
+</body>
+</html>
+
+<script>
+
+    let UserDataBase=JSON.parse(localStorage.getItem("register")) || [];
+
+    let vaccinatedUser=JSON.parse(localStorage.getItem("vaccinated")) || [];
+   
+
+    let n1=document.getElementById("input-feild1");
+    let n2=document.getElementById("input-feild2");
+    let n3=document.getElementById("input-feild3");
+    let n4=document.getElementById("input-feild4");
+
+    let verify=document.getElementById("verifyotp");
+
+    verify.addEventListener("click",function (e){
+
+        e.preventDefault()
+        if(n1.value && n2.value && n3.value && n4.value){
+            let otp=+(n1.value+n2.value+n3.value+n4.value);
+            
+            
+            let fd=UserDataBase.filter((item)=>{
+                return (item.OTP===otp)
+            })
+            // console.log(fd)
+            if(fd.length!==0){
+                alert("OTP verified Successfully !");
+                vaccinationprocess(fd[0].name,fd[0].vaccine,fd[0].id)
+            }
+            else{
+                alert("OTP mismatch ! kindly enter again.")
+            }
+        }
+        else{
+            alert("Kindly enter correct OTP")
+        }
+
+    })
+
+
+
+    function vaccinationprocess(name,vaccine,UID){
+            
+        let user=[];
+
+        alert(`${name} Added to Queue for Vaccination.`);
+
+        setTimeout(function (){
+            alert(`Vaccinating ${vaccine}`)
+        },5000)
+
+        setTimeout(function (){
+            alert(`${name} Vaccinated `)
+
+            UserDataBase=UserDataBase.reduce((acc,item)=>{
+
+                if(item.id!==UID){
+                    acc.push(item)
+                }
+                else{
+                    user.push(item)
+                }
+                return acc;
+
+            },[])
+
+            vaccinatedUser.push(user[0])
+
+            localStorage.setItem("register",JSON.stringify(UserDataBase))
+            localStorage.setItem("vaccinated",JSON.stringify(vaccinatedUser));
+            window.location="dashboard.html"
+
+        },10000)
+        
+
+    }
+
+
+</script>
