@@ -7,7 +7,7 @@ console.log("Odd")
 }
 }
 
-let n=5;
+let n=+process.argv[2];
 for(let i=0;i<5;i++){
 checkEven(i);
 checkOdd(i);
@@ -15,10 +15,10 @@ checkOdd(i);
 
 
 function checkOdd(n){
-if(n%2==1){
-console.log("odd")
+if(n%2===1){
+console.log("Number is Odd")
 }
 else{
-console.log("Even")
+console.log("Number is Even")
 }
 }
