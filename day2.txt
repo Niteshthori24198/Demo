@@ -8,9 +8,13 @@ console.log("Odd")
 }
 
 let n=+process.argv[2];
+
 for(let i=0;i<5;i++){
+
 checkEven(i);
+
 checkOdd(i);
+
 }
 
 
